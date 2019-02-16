@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AJAX page</title>
+    <!-- <link rel='stylesheet' href='/stylesheets/style.css' /> -->
+  </head>
+  <body>
+    <h1>AJAX page</h1>
+
+    <button class="button">Send GET AJAX request</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+        const send = document.querySelector('.button');
+        
+            send.addEventListener('click', (e) => {
+                axios.get('/', {
+                    name: { id: 12345 }
+                })
+                .then(function (response) {
+                    console.log('This is AJAX request');
+                })
+                .catch(function (error) {
+                console.log(error);
+                });
+            });
+
+    </script>
+  </body>
+</html>
